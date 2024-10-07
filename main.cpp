@@ -47,7 +47,7 @@ int main() {
 	mySourceFile.open("data.txt");
 	if (!mySourceFile.fail()) {
 
-		for (int i = 0; i < 5; i++) {
+		
 			while (!mySourceFile.eof() && !mySourceFile.fail()) {
 			int anInt = 0;
 			mySourceFile >> anInt;
@@ -64,6 +64,6 @@ int main() {
 		avFromFile /= 5.0;
 		cout << "The average from the file is " << avFromFile << endl;
 
-	}
+	
 	return 0;
 }
