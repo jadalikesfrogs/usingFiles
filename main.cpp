@@ -11,7 +11,7 @@ int main() {
 	ifstream mySourceFile;			// declare obj for the input file
 	double avFromFile = 0.0;		// somewhere to store our average
 
-	myDataFile.open("data.txt");
+	myDataFile.open("data.txt", ios::app);
 
 	for (int i = 0; i < 5; i++) {
 		int anInt = 0;
