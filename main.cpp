@@ -13,7 +13,7 @@ int main() {
 
 	myDataFile.open("data.txt", ios::app);
 
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < 5; i++) { //this counts 5 ints
 		int anInt = 0;
 		cin >> anInt;
 		myDataFile << anInt << endl;
