@@ -24,16 +24,26 @@ int main() {
 	//the average
 	mySourceFile.open("data.txt");
 
-	for (int i = 0; i < 5; i++) {
-		int anInt = 0;
-		mySourceFile >> anInt;
-		myDataFile << anInt << endl;
-		avFromFile += static_cast<double>(anInt);
+	if (!mySourceFile.fail()) {
+
+		for (int i = 0; i < 5; i++) {
+			int anInt = 0;
+			mySourceFile >> anInt;
+			myDataFile << anInt << endl;
+
+			if (mySourceFile.fail()) {
+				break; // assume i cannot recover and must exit the loop
+			}
+
+
+			avFromFile += static_cast<double>(anInt);
+		}
+
+		mySourceFile.close();
+
+		avFromFile /= 5.0;
+		cout << "The average from the file is " << avFromFile << endl;
+
 	}
-
-	mySourceFile.close();
-
-	avFromFile /= 5.0;
-	cout << "The average from the file is " << avFromFile << endl;
 	return 0;
 }
